@@ -1,0 +1,238 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>LAYOUT TEST</title>
+  <meta name="description" content="layout tjw">
+  <meta name="author" content="tracey">
+<style >
+ 
+.flex-container {
+  display: flex;
+      flex-wrap: wrap;
+    justify-content: center;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  flex: 0 1 150px; /*  No stretching: */
+   flex: 1 1 150px; /*  stretching: */
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+/*-----*/
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0; padding: 0;
+}
+
+.grid {
+  display: grid;
+  /*grid-template-columns: repeat(4, 1fr);*/
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  grid-gap: 10px;
+  background-color: rgba(255,0,0,.7);
+  height: 25%;
+  margin: 0;
+  padding: 0;
+}
+
+.column {
+  font-family: 'Output Sans', -apple-system, BlinkMacSystemFont, 
+    "Segoe UI", "Roboto", "Oxygen", 
+    "Ubuntu", "Cantarell", "Fira Sans", 
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  background-color: rgba(0,0,0,.2);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+/* -----*/
+* {
+  box-sizing: border-box;
+}
+
+/* Container for flexboxes */
+.flexrow {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create four equal columns */
+.fourcolumn {
+  flex: 25%;
+  padding: 20px;
+}
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .fourcolumn {
+    flex: 50%;
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .flexrow {
+    flex-direction: column;
+  }
+}
+
+/* ----- */
+/* Container for flexboxes */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create six equal columns */
+.sixcolumn {
+  flex: 16.6%;
+  padding: 20px;
+}
+
+/* On screens that are 992px wide or less, go from six columns to three columns */
+@media screen and (max-width: 992px) {
+  .sixcolumn {
+    flex: 33.3%;
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+</style>
+
+</head>
+
+<body> 
+  
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+    <div>4</div> 
+      <div>5</div> 
+        <div>6</div> 
+          <div>7</div> 
+  <div>8</div> 
+
+</div> 
+
+
+
+<div class="grid">
+  <div class="column">hi </div>
+  <div class="column">lots and lots of text here - how do i get a grid to stack properly ?!!!!</div>
+  <div class="column">ddd</div>
+  <div class="column">eee</div>
+</div> 
+  
+  
+  
+<h2>example 3Responsive Four Column Layout with Flex</h2>
+<p><strong>Resize the browser window to see the responsive effect.</strong> On screens that are 992px wide or less, the columns will resize from four columns to two columns. On screens that are 600px wide or less, the columns will stack on top of each other instead of next to eachother.</p>
+
+<div class="flexrow">
+  <div class="fourcolumn" style="background-color:#aaa;">
+    <h2>Column 1</h2>
+    <p>Some text..</p>
+  </div>
+  
+  <div class="fourcolumn" style="background-color:#bbb;">
+    <h2>Column 2</h2>
+    <p>Some text..</p>
+  </div>
+  
+  <div class="fourcolumn" style="background-color:#ccc;">
+    <h2>Column 3</h2>
+    <p>Some text..</p>
+  </div>
+  
+  <div class="fourcolumn" style="background-color:#ddd;">
+    <h2>Column 4</h2>
+    <p>Some text..</p>
+  </div>
+  
+</div>
+
+
+<h2>Responsive 6 Column Layout with Flex</h2>
+<p><strong>Resize the browser window to see the responsive effect.</strong> On screens that are 992px wide or less, the columns will resize from four columns to two columns. On screens that are 600px wide or less, the columns will stack on top of each other instead of next to eachother.</p>
+
+<div class="row">
+  <div class="sixcolumn" style="background-color:#aaa;">
+    <h2>Column 1</h2>
+    <p>Some text..</p>
+  </div>
+  
+  <div class="sixcolumn" style="background-color:#bbb;">
+    <h2>Column 2</h2>
+    <p>Some text..On screens that are 992px wide or less, the columns will resize from six columns to three columns. On screens that are 600px wide or less, the columns will stack on top of each other instead of next to eachother</p>
+  </div>
+  
+  <div class="sixcolumn" style="background-color:#ccc;">
+    <h2>Column 3</h2>
+    <p>Some text..</p>
+  </div>
+  
+  <div class="sixcolumn" style="background-color:#ddd;">
+    <h2>Column 4</h2>
+    <p>Some text..</p>
+  </div>
+    <div class="sixcolumn" style="background-color:#eee;">
+    <h2>Column 5</h2>
+    <p>Some text..</p>
+  </div>
+    <div class="sixcolumn" style="background-color:#fff;">
+    <h2>Column 6</h2>
+    <p>Some text..On screens that are 992px wide or less, the columns will resize from four columns to three columns. On screens that are 600px wide or less, the columns will stack on top of each other instead of next to eachother</p>
+  </div>
+</div>
+
+
+<h2> TW play area </h2>
+
+<div class="flexrow">
+  <article class="fourcolumn" style="background-color:#aaa;">
+    <h2>Column 1</h2>
+    <p>Some text..</p>
+  </article>
+  
+  <article class="fourcolumn" style="background-color:#bbb;">
+    <h2>Column 2</h2>
+    <p>Some text..</p>
+  </article>
+  
+  <article class="fourcolumn" style="background-color:#ccc;">
+    <h2>Column 3</h2>
+    <p>Some text..</p>
+  </article>
+  
+  <article class="fourcolumn" style="background-color:#ddd;">
+    <h2>Column 4</h2>
+    <p>Some text..</p>
+  </article>
+  
+</div>
+
+
+
+</body>
+</html>
+
